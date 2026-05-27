@@ -43,7 +43,7 @@ export default function App() {
     setResult(null)
     setError(null)
     try {
-      const r = await fetch('http://localhost:8000/research', {
+      const r = await fetch('https://dispatch-backend-vwgu.onrender.com/research', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ company: company.trim() }),
