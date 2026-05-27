@@ -1,0 +1,6 @@
+fastapi
+uvicorn[standard]
+anthropic
+tavily-python
+python-dotenv
+slowapi
