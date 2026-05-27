@@ -25,19 +25,14 @@ Output format:
 
 ## Architecture
 
-Browser → Netlify (React)
-↓ POST /research
-Render (FastAPI)
-↓
-┌─────────────────────┐
-│   Agent Pipeline    │
-│                     │
-│  Tavily (search x3) │
-│       ↓             │
-│  Haiku (classify)   │
-│       ↓             │
-│  Sonnet (synthesize)│
-└─────────────────────┘
+Browser → Netlify (React) → Render (FastAPI) → Agent Pipeline
+
+The agent pipeline runs three steps:
+1. Tavily searches the web (3 targeted queries)
+2. Claude Haiku classifies each result for relevance
+3. Claude Sonnet synthesizes all results into a structured report
+
+---
 
 ## The routing decision
 
